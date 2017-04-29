@@ -30,10 +30,12 @@ We set the plugins and the dependencies to nil because the build.boot
 file contains specifications for all the libraries needed. Cider can
 inject them automatically, but I couldn't get things working that
 way. Note that even though the variable is called lein-plugins, it is
-also used for Boot projects. Then we make sure Cider uses the task
-named "dev", which is also defined in [[build.boot]]. Lastly we set the
-command cider should use (once it has connected to the Clojure repl)
-to start the ClojureScript repl.
+also used for Boot projects. Then we make sure Cider uses the Boot
+task named "dev", which is also defined in [[build.boot]]. This task is
+configured to start everything up - Clojure, a web server and the
+ClojureScript compiler. Lastly we set the command Cider should use
+(once it has connected to the Clojure repl) to start the ClojureScript
+repl.
 
 Then, to get a running browser connected repl, open one of the files
 in the project, for example core.cljs. Run =M-x
